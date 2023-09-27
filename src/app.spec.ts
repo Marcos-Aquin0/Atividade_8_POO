@@ -24,10 +24,7 @@ describe('App', () => {
     it('should correctly register a user', () => {
         const user = new User('Jose', 'jose@mail.com', '1234')
         const app = new App()
-        // Act: Registre uma bicicleta
         app.registerUser(user);
-
-        // Assert: Verifique se a bicicleta foi registrada com sucesso
         expect(user.id).toBeDefined();
         expect(user.name).toBe('Jose');
         expect(user.email).toBe('jose@mail.com');
@@ -59,10 +56,8 @@ describe('App', () => {
         const bike = new Bike('caloi mountainbike', 'mountain bike',
         1234, 1234, 100.0, 'My bike', 5, [])
         const app = new App()
-        // Act: Registre uma bicicleta
         app.registerBike(bike);
 
-        // Assert: Verifique se a bicicleta foi registrada com sucesso
         expect(bike.id).toBeDefined();
         expect(bike.name).toBe('caloi mountainbike');
         expect(bike.type).toBe('moutain bike');
@@ -162,5 +157,4 @@ describe('App', () => {
             app.findBike('fakeBikeID')
         }).toThrow(BikeNotFoundError)
     })
-    
 })
